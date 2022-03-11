@@ -25,7 +25,8 @@ module ActionDispatch
         end
         url_for_without_subdomains(options, *args)
       end
-      alias_method_chain :url_for, :subdomains
+      alias_method :url_for_without_subdomains, :url_for
+      alias_method :url_for, :url_for_with_subdomains
     end
   end
 end
